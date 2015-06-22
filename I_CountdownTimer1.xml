@@ -1,0 +1,36 @@
+<implementation>
+  <files>L_CountdownTimer1.lua</files>
+  <startup>initialize</startup>
+  <actionList>
+    <action>
+      <serviceId>urn:futzle-com:serviceId:CountdownTimer1</serviceId>
+      <name>StartTimer</name>
+      <run>return StartTimer(lul_device, lul_settings)</run>
+    </action>
+    <action>
+      <serviceId>urn:futzle-com:serviceId:CountdownTimer1</serviceId>
+      <name>RestartTimer</name>
+      <run>return RestartTimer(lul_device, lul_settings)</run>
+    </action>
+    <action>
+      <serviceId>urn:futzle-com:serviceId:CountdownTimer1</serviceId>
+      <name>CancelTimer</name>
+      <run>return CancelTimer(lul_device, lul_settings)</run>
+    </action>
+    <action>
+      <serviceId>urn:futzle-com:serviceId:CountdownTimer1</serviceId>
+      <name>ForceComplete</name>
+      <run>return ForceComplete(lul_device, lul_settings)</run>
+    </action>
+    <action>
+      <serviceId>urn:futzle-com:serviceId:CountdownTimer1</serviceId>
+      <name>SetTimerDuration</name>
+      <run>return SetTimerDuration(lul_device, lul_settings)</run>
+    </action>
+    <action>
+      <serviceId>urn:futzle-com:serviceId:CountdownTimer1</serviceId>
+      <name>SetMute</name>
+      <run>return SetMute(lul_device, lul_settings)</run>
+    </action>
+  </actionList>
+</implementation>

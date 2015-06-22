@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!-- Icons CC(A) http://findicons.com/pack/1588/farm_fresh_web -->
+<root xmlns="urn:schemas-upnp-org:device-1-0">
+  <specVersion>
+    <major>1</major>
+    <minor>0</minor>
+  </specVersion>
+  <device>
+    <deviceType>urn:schemas-futzle-com:device:CountdownTimer:1</deviceType>
+    <staticJson>D_CountdownTimer1.json</staticJson> 
+    <serviceList>
+      <service>
+        <serviceType>urn:schemas-futzle-com:service:CountdownTimer:1</serviceType>
+        <serviceId>urn:futzle-com:serviceId:CountdownTimer1</serviceId>
+        <SCPDURL>S_CountdownTimer1.xml</SCPDURL>
+      </service>
+    </serviceList>
+    <implementationList>
+      <implementationFile>I_CountdownTimer1.xml</implementationFile>
+    </implementationList>
+  </device>
+</root>

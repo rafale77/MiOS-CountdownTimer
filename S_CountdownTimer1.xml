@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<scpd xmlns="urn:schemas-upnp-org:service-1-0">
+  <specVersion>
+    <major>1</major>
+    <minor>0</minor>
+  </specVersion>
+  <serviceStateTable>
+    <stateVariable sendEvents="yes">
+      <name>Counting</name>
+      <dataType>boolean</dataType>
+      <defaultValue>0</defaultValue>
+      <shortCode>counting</shortCode>
+    </stateVariable>
+    <stateVariable sendEvents="yes">
+      <name>Remaining</name>
+      <dataType>ui4</dataType>
+      <defaultValue>0</defaultValue>
+      <shortCode>remaining</shortCode>
+    </stateVariable>
+    <stateVariable sendEvents="no">
+      <name>Muted</name>
+      <dataType>boolean</dataType>
+      <defaultValue>0</defaultValue>
+      <shortCode>muted</shortCode>
+    </stateVariable>
+    <stateVariable sendEvents="yes">
+      <name>Event</name>
+      <dataType>boolean</dataType>
+      <defaultValue>0</defaultValue>
+      <shortCode>event</shortCode>
+    </stateVariable>
+  </serviceStateTable>
+  <actionList>
+    <action>
+      <name>StartTimer</name>
+      <argumentList>
+      </argumentList>
+    </action>
+    <action>
+      <name>RestartTimer</name>
+      <argumentList>
+      </argumentList>
+    </action>
+    <action>
+      <name>CancelTimer</name>
+      <argumentList>
+      </argumentList>
+    </action>
+    <action>
+      <name>ForceComplete</name>
+      <argumentList>
+      </argumentList>
+    </action>
+    <action>
+      <name>SetTimerDuration</name>
+      <argumentList>
+        <argument>
+          <name>newDuration</name>
+          <direction>in</direction>
+          <relatedStateVariable>Remaining</relatedStateVariable>
+        </argument>
+      </argumentList>
+    </action>
+    <action>
+      <name>SetMute</name>
+      <argumentList>
+        <argument>
+          <name>newStatus</name>
+          <direction>in</direction>
+          <relatedStateVariable>Muted</relatedStateVariable>
+        </argument>
+      </argumentList>
+    </action>
+  </actionList>
+</scpd>
+

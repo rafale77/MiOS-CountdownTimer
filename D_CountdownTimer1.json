@@ -1,0 +1,553 @@
+{
+    "flashicon": "default.png",
+    "doc_url": {
+        "doc_language": 1,
+        "doc_manual": 1,
+        "doc_version": 1,
+        "doc_platform": 0,
+        "doc_page": "devices" 
+    },
+    "DisplayStatus": {
+        "Service": "urn:futzle-com:serviceId:CountdownTimer1",
+        "Variable": "Counting",
+        "MinValue": "0",
+        "MaxValue": "1"
+    },
+    "inScene": "1",
+    "x": 2,
+    "y": 4,
+    "Tabs": [
+        {
+            "Label": {
+                "lang_tag": "tabname_control",
+                "text": "Control"
+            },
+            "Position": "0",
+            "TabType": "flash",
+            "top_navigation_tab": 1,
+            "SceneGroup": [
+              {
+                "id": "1",
+                "top": "0",
+                "left": "0",
+                "x": "1",
+                "y": "4"
+              },
+              {
+                "id": "2",
+                "top": "2",
+                "left": "1",
+                "x": "1",
+                "y": "2"
+              },
+              {
+                "id": "3",
+                "top": "0",
+                "left": "1",
+                "x": "1",
+                "y": "1"
+              }
+            ],
+            "ControlGroup": [
+                {
+                    "id": "1",
+                    "isSingle": "0",
+                    "scenegroup": "1"
+                },
+                {
+                    "id": "2",
+                    "isSingle": "1",
+                    "scenegroup": "2"
+                },
+                {
+                    "id": "3",
+                    "type": "info",
+                    "scenegroup": "3"
+                },
+                {
+                    "id": "4"
+                },
+                {
+                    "id": "5"
+                }
+
+            ],
+            "Control": [
+                {
+                    "ControlGroup": "1",
+                    "ControlType": "button",
+                    "top": 0,
+                    "left": 0,
+                    "Label": {
+                        "lang_tag": "cmd_set",
+                        "text": "Start"
+                    },
+                    "Display": {
+                        "Service": "urn:futzle-com:serviceId:CountdownTimer1",
+                        "Variable": "Counting",
+                        "Value": "1",
+                        "Top": 20,
+                        "Left": 20,
+                        "Width": 80,
+                        "Height": 20
+                    },
+                    "Command": {
+                        "Service": "urn:futzle-com:serviceId:CountdownTimer1",
+                        "Action": "StartTimer",
+                        "Parameters": [
+                        ]
+                    }
+                },
+                {
+                    "ControlGroup": "1",
+                    "ControlType": "button",
+                    "top": 1,
+                    "left": 0,
+                    "Label": {
+                        "lang_tag": "cmd_set",
+                        "text": "Restart"
+                    },
+                    "Display": {
+                        "Service": "urn:futzle-com:serviceId:CountdownTimer1",
+                        "Top": 20,
+                        "Left": 120,
+                        "Width": 80,
+                        "Height": 20
+                    },
+                    "Command": {
+                        "Service": "urn:futzle-com:serviceId:CountdownTimer1",
+                        "Action": "RestartTimer",
+                        "Parameters": [
+                        ]
+                    }
+                },
+                {
+                    "ControlGroup": "1",
+                    "ControlType": "button",
+                    "top": 2,
+                    "left": 0,
+                    "Label": {
+                        "lang_tag": "cmd_set",
+                        "text": "Cancel"
+                    },
+                    "Display": {
+                        "Service": "urn:futzle-com:serviceId:CountdownTimer1",
+                        "Top": 20,
+                        "Left": 220,
+                        "Width": 80,
+                        "Height": 20
+                    },
+                    "Command": {
+                        "Service": "urn:futzle-com:serviceId:CountdownTimer1",
+                        "Action": "CancelTimer",
+                        "Parameters": [
+                        ]
+                    }
+                },
+                {
+                    "ControlGroup": "1",
+                    "ControlType": "button",
+                    "top": 3,
+                    "left": 0,
+                    "Label": {
+                        "lang_tag": "cmd_set",
+                        "text": "Force"
+                    },
+                    "Display": {
+                        "Service": "urn:futzle-com:serviceId:CountdownTimer1",
+                        "Top": 20,
+                        "Left": 320,
+                        "Width": 80,
+                        "Height": 20
+                    },
+                    "Command": {
+                        "Service": "urn:futzle-com:serviceId:CountdownTimer1",
+                        "Action": "ForceComplete",
+                        "Parameters": [
+                        ]
+                    }
+                },
+                {
+                    "ControlGroup": "2",
+                    "ControlType": "button",
+                    "top": 0,
+                    "left": 0,
+                    "Label": {
+                        "lang_tag": "cmd_set",
+                        "text": "Mute"
+                    },
+                    "Display": {
+                        "Service": "urn:futzle-com:serviceId:CountdownTimer1",
+                        "Variable": "Muted",
+                        "Value": "1",
+                        "Top": 80,
+                        "Left": 20,
+                        "Width": 80,
+                        "Height": 20
+                    },
+                    "Command": {
+                        "Service": "urn:futzle-com:serviceId:CountdownTimer1",
+                        "Action": "SetMute",
+                        "Parameters": [
+                            {
+                                "Name": "newStatus",
+                                "Value": "1"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "ControlGroup": "2",
+                    "ControlType": "button",
+                    "top": 1,
+                    "left": 0,
+                    "Label": {
+                        "lang_tag": "cmd_set",
+                        "text": "Unmute"
+                    },
+                    "Display": {
+                        "Service": "urn:futzle-com:serviceId:CountdownTimer1",
+                        "Variable": "Muted",
+                        "Value": "0",
+                        "Top": 80,
+                        "Left": 120,
+                        "Width": 80,
+                        "Height": 20
+                    },
+                    "Command": {
+                        "Service": "urn:futzle-com:serviceId:CountdownTimer1",
+                        "Action": "SetMute",
+                        "Parameters": [
+                            {
+                                "Name": "newStatus",
+                                "Value": "0"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "ControlGroup": "5",
+                    "ControlType": "label",
+                    "Label": {
+                        "lang_tag": "device_settings_page",
+                        "text": "Remaining:"
+                    },
+                    "Display": {
+                        "Top": 160,
+                        "Left": 20,
+                        "Width": 80,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlGroup": "3",
+                    "ControlType": "variable",
+                    "top": 0.2,
+                    "left": 0,
+                    "Display": {
+                        "Service": "urn:futzle-com:serviceId:CountdownTimer1",
+                        "Variable": "Remaining",
+                        "Top": 160,
+                        "Left": 120,
+                        "Width": 80,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlGroup": "4",
+                    "ControlType": "input",
+                    "ID": "newDuration",
+                    "Display": {
+                        "Top": 240,
+                        "Left": 20,
+                        "Width": 80,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlGroup": "4",
+                    "ControlType": "button",
+                    "Label": {
+                        "lang_tag": "cmd_set",
+                        "text": "Set Duration"
+                    },
+                    "Display": {
+                        "Service": "urn:futzle-com:serviceId:CountdownTimer1",
+                        "Top": 240,
+                        "Left": 120,
+                        "Width": 120,
+                        "Height": 20
+                    },
+                    "Command": {
+                        "Service": "urn:futzle-com:serviceId:CountdownTimer1",
+                        "Action": "SetTimerDuration",
+                        "Parameters": [
+                            {
+                                "Name": "newDuration",
+                                "ID": "newDuration"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "Label": {
+                "lang_tag": "advanced",
+                "text": "Advanced" 
+            },
+            "Position": "2",
+            "TabType": "javascript",
+            "ScriptName": "shared.js",
+            "Function": "advanced_device" 
+        },
+        {
+            "Label": {
+                "lang_tag": "logs",
+                "text": "Logs" 
+            },
+            "Position": "3",
+            "TabType": "javascript",
+            "ScriptName": "shared.js",
+            "Function": "device_logs" 
+        },
+        {
+            "Label": {
+                "lang_tag": "notifications",
+                "text": "Notifications" 
+            },
+            "Position": "4",
+            "TabType": "javascript",
+            "ScriptName": "shared.js",
+            "Function": "device_notifications" 
+        }
+    ],
+    "DeviceType": "urn:schemas-futzle-com:device:CountdownTimer:1",
+    "eventList2": [
+        {
+            "id": 5,
+            "label": {
+                "lang_tag": "timer_starts_not_muted",
+                "text": "Timer starts while not muted"
+            },
+            "serviceId": "urn:futzle-com:serviceId:CountdownTimer1",
+            "serviceStateTable": {
+                "Event": {
+                    "value": "5",
+                    "comparisson": "="
+                },
+                "Muted": {
+                    "value": "0",
+                    "comparisson": "="
+                }
+            }
+        },
+        {
+            "id": 6,
+            "label": {
+                "lang_tag": "timer_starts",
+                "text": "Timer starts (ignoring mute status)"
+            },
+            "serviceId": "urn:futzle-com:serviceId:CountdownTimer1",
+            "serviceStateTable": {
+                "Event": {
+                    "value": "5",
+                    "comparisson": "="
+                }
+            }
+        },
+        {
+            "id": 5,
+            "label": {
+                "lang_tag": "timer_restarts_not_muted",
+                "text": "Timer restarts while not muted"
+            },
+            "serviceId": "urn:futzle-com:serviceId:CountdownTimer1",
+            "serviceStateTable": {
+                "Event": {
+                    "value": "7",
+                    "comparisson": "="
+                },
+                "Muted": {
+                    "value": "0",
+                    "comparisson": "="
+                }
+            }
+        },
+        {
+            "id": 6,
+            "label": {
+                "lang_tag": "timer_restarts",
+                "text": "Timer restarts (ignoring mute status)"
+            },
+            "serviceId": "urn:futzle-com:serviceId:CountdownTimer1",
+            "serviceStateTable": {
+                "Event": {
+                    "value": "7",
+                    "comparisson": "="
+                }
+            }
+        },
+        {
+            "id": 1,
+            "label": {
+                "lang_tag": "timer_complete_not_muted",
+                "text": "Timer completes while not muted"
+            },
+            "serviceId": "urn:futzle-com:serviceId:CountdownTimer1",
+            "serviceStateTable": {
+                "Event": {
+                    "value": "1",
+                    "comparisson": "="
+                },
+                "Muted": {
+                    "value": "0",
+                    "comparisson": "="
+                }
+            }
+        },
+        {
+            "id": 3,
+            "label": {
+                "lang_tag": "timer_complete",
+                "text": "Timer completes (ignoring mute status)"
+            },
+            "serviceId": "urn:futzle-com:serviceId:CountdownTimer1",
+            "serviceStateTable": {
+                "Event": {
+                    "value": "1",
+                    "comparisson": "="
+                }
+            }
+        },
+        {
+            "id": 2,
+            "label": {
+                "lang_tag": "timer_cancelled_not_muted",
+                "text": "Timer cancelled while not muted"
+            },
+            "serviceId": "urn:futzle-com:serviceId:CountdownTimer1",
+            "serviceStateTable": {
+                "Event": {
+                    "value": "2",
+                    "comparisson": "="
+                },
+                "Muted": {
+                    "value": "0",
+                    "comparisson": "="
+                }
+            }
+        },
+        {
+            "id": 4,
+            "label": {
+                "lang_tag": "timer_cancelled",
+                "text": "Timer cancelled (ignoring mute status)"
+            },
+            "serviceId": "urn:futzle-com:serviceId:CountdownTimer1",
+            "serviceStateTable": {
+                "Event": {
+                    "value": "2",
+                    "comparisson": "="
+                }
+            }
+        },
+        {
+            "id": 11,
+            "label": {
+                "lang_tag": "timer_start_fail_not_muted",
+                "text": "Failed to start timer while not muted"
+            },
+            "serviceId": "urn:futzle-com:serviceId:CountdownTimer1",
+            "serviceStateTable": {
+                "Event": {
+                    "value": "6",
+                    "comparisson": "="
+                },
+                "Muted": {
+                    "value": "0",
+                    "comparisson": "="
+                }
+            }
+        },
+        {
+            "id": 12,
+            "label": {
+                "lang_tag": "timer_start_fail",
+                "text": "Failed to start timer (ignoring mute status)"
+            },
+            "serviceId": "urn:futzle-com:serviceId:CountdownTimer1",
+            "serviceStateTable": {
+                "Event": {
+                    "value": "6",
+                    "comparisson": "="
+                }
+            }
+        },
+        {
+            "id": 9,
+            "label": {
+                "lang_tag": "timer_force_fail_not_muted",
+                "text": "Failed to force timer while not muted"
+            },
+            "serviceId": "urn:futzle-com:serviceId:CountdownTimer1",
+            "serviceStateTable": {
+                "Event": {
+                    "value": "3",
+                    "comparisson": "="
+                },
+                "Muted": {
+                    "value": "0",
+                    "comparisson": "="
+                }
+            }
+        },
+        {
+            "id": 10,
+            "label": {
+                "lang_tag": "timer_force_fail",
+                "text": "Failed to force timer (ignoring mute status)"
+            },
+            "serviceId": "urn:futzle-com:serviceId:CountdownTimer1",
+            "serviceStateTable": {
+                "Event": {
+                    "value": "3",
+                    "comparisson": "="
+                }
+            }
+        },
+        {
+            "id": 7,
+            "label": {
+                "lang_tag": "timer_cancel_fail_not_muted",
+                "text": "Failed to cancel timer while not muted"
+            },
+            "serviceId": "urn:futzle-com:serviceId:CountdownTimer1",
+            "serviceStateTable": {
+                "Event": {
+                    "value": "3",
+                    "comparisson": "="
+                },
+                "Muted": {
+                    "value": "4",
+                    "comparisson": "="
+                }
+            }
+        },
+        {
+            "id": 8,
+            "label": {
+                "lang_tag": "timer_cancel_fail",
+                "text": "Failed to cancel timer (ignoring mute status)"
+            },
+            "serviceId": "urn:futzle-com:serviceId:CountdownTimer1",
+            "serviceStateTable": {
+                "Event": {
+                    "value": "4",
+                    "comparisson": "="
+                }
+            }
+        }
+    ]
+}
+
