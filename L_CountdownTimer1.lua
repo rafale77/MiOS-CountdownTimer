@@ -70,7 +70,7 @@ function tick()
   luup.variable_set(ServiceId, "Remaining", 0, Device)
   luup.variable_set(ServiceId, "Counting", 0, Device)
   luup.variable_set(ServiceId, "Event", 1, Device) -- 1 = complete
-  luup.variable_set(ServiceId, "Event", 0, Device)
+  luup.call_delay(resetevent, 1)
   return true
 end
 
@@ -140,8 +140,12 @@ function ForceComplete()
   luup.variable_set(ServiceId, "Remaining", 0, Device)
   luup.variable_set(ServiceId, "Counting", 0, Device)
   luup.variable_set(ServiceId, "Event", 1, Device) -- 1 = complete
-  luup.variable_set(ServiceId, "Event", 0, Device)
+  luup.call_delay(resetevent, 1)
   return true
+end
+
+function resetevent()
+  luup.variable_set(ServiceId, "Event", 0, Device)
 end
 
 function SetTimerDuration(lul_device, lul_settings)
