@@ -70,7 +70,7 @@ function tick()
   luup.variable_set(ServiceId, "Remaining", 0, Device)
   luup.variable_set(ServiceId, "Counting", 0, Device)
   luup.variable_set(ServiceId, "Event", 1, Device) -- 1 = complete
-  luup.variable_set(ServiceId, "Event", 0, Device)
+  luup.call_delay("resetevent", 1)
   return true
 end
 
@@ -78,7 +78,7 @@ function StartTimer()
   local counting = luup.variable_get(ServiceId, "Counting", Device)
   if (counting == "1") then
     luup.variable_set(ServiceId, "Event", 6, Device) -- 6 = failed to start
-    luup.variable_set(ServiceId, "Event", 0, Device)
+    luup.call_delay("resetevent", 1)
     return false
   end
   return startTimerAlways()
@@ -97,11 +97,11 @@ function startTimerAlways()
   luup.variable_set(ServiceId, "Counting", 1, Device)
   if (counting == "1") then
     luup.variable_set(ServiceId, "Event", 7, Device) -- 7 = restart
-    luup.variable_set(ServiceId, "Event", 0, Device)
+    luup.call_delay("resetevent", 1)
 		return true
   else
     luup.variable_set(ServiceId, "Event", 5, Device) -- 5 = start
-    luup.variable_set(ServiceId, "Event", 0, Device)
+    luup.call_delay("resetevent", 1)
     return luup.call_delay("tick", 1, "") == 0
   end
 end
@@ -118,14 +118,14 @@ function CancelTimer()
   local counting = luup.variable_get(ServiceId, "Counting", Device)
   if (counting == "0") then
     luup.variable_set(ServiceId, "Event", 4, Device) -- 4 = cancel failed
-    luup.variable_set(ServiceId, "Event", 0, Device)
+    luup.call_delay("resetevent", 1)
     return false
   end
   luup.variable_set(ServiceId, "Counting", 0, Device)
   luup.variable_set(ServiceId, "DueTimestamp", "", Device)
   luup.variable_set(ServiceId, "Remaining", 0, Device)
   luup.variable_set(ServiceId, "Event", 2, Device) -- 2 = cancelled
-  luup.variable_set(ServiceId, "Event", 0, Device)
+  luup.call_delay("resetevent", 1)
   return true
 end
 
@@ -133,15 +133,19 @@ function ForceComplete()
   local counting = luup.variable_get(ServiceId, "Counting", Device)
   if (counting == "0") then
     luup.variable_set(ServiceId, "Event", 3, Device) -- 3 = force failed
-    luup.variable_set(ServiceId, "Event", 0, Device)
+    luup.call_delay("resetevent", 1)
     return false
   end
   luup.variable_set(ServiceId, "DueTimestamp", "", Device)
   luup.variable_set(ServiceId, "Remaining", 0, Device)
   luup.variable_set(ServiceId, "Counting", 0, Device)
   luup.variable_set(ServiceId, "Event", 1, Device) -- 1 = complete
-  luup.variable_set(ServiceId, "Event", 0, Device)
+  luup.call_delay("resetevent", 1)
   return true
+end
+
+function resetevent()
+  luup.variable_set(ServiceId, "Event", 0, Device)
 end
 
 function SetTimerDuration(lul_device, lul_settings)
